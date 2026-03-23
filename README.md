@@ -7,7 +7,8 @@
 
 ## Arranque rápido
 
-### Solo frontend (sin backend)
+## Solo frontend (sin backend)
+
 ```bash
 # Opción A: abrir directo en el navegador
 open frontend/index.html
@@ -18,6 +19,7 @@ npx serve frontend
 ```
 
 ### Con backend Express
+
 ```bash
 # 1. Instalar dependencias
 npm install
@@ -37,7 +39,7 @@ npm run dev
 
 ## Estructura del proyecto
 
-```
+---
 project-root/
 │
 ├── frontend/
@@ -53,12 +55,12 @@ project-root/
 │   │   ├── elements/_elements.css  # Estilos base HTML
 │   │   ├── objects/_objects.css    # Layouts reutilizables
 │   │   ├── components/             # UI components
-│   │   │   ├── _header.css
-│   │   │   ├── _hero.css
-│   │   │   ├── _cards.css
-│   │   │   ├── _buttons.css
-│   │   │   ├── _modal.css
-│   │   │   ├── _chatbot.css
+│   │   │   ├──_header.css
+│   │   │   ├──_hero.css
+│   │   │   ├──_cards.css
+│   │   │   ├──_buttons.css
+│   │   │   ├──_modal.css
+│   │   │   ├──_chatbot.css
 │   │   │   └── _contact.css
 │   │   ├── utilities/_utilities.css
 │   │   └── main.css                # Entry point con @imports
@@ -98,14 +100,13 @@ project-root/
 ├── .env.example
 ├── .gitignore
 └── README.md
-```
 
 ---
 
 ## Personalización rápida
 
 | Qué cambiar | Archivo |
-|---|---|
+| --- | --- |
 | Colores, tipografía, espaciado | `frontend/styles/settings/_variables.css` |
 | Logo y textos del hero | `frontend/index.html` → sección `#inicio` |
 | Imagen del hero | `index.html` → reemplazar `.c-hero__img-placeholder` por `<img src="...">` |
@@ -142,13 +143,13 @@ Luego en los controllers, reemplazar la lectura desde JSON por queries a `db.ser
 ## Tecnologías
 
 | Capa | Tecnología |
-|---|---|
+| --- | --- |
 | HTML | HTML5 semántico + ARIA |
 | CSS | ITCSS (vanilla, sin preprocesador) |
 | JS | ES Modules nativos (sin bundler) |
 | Backend | Node.js + Express |
 | DB | SQLite (better-sqlite3) |
-| IA | Anthropic Claude (opcional) |
+| IA | DEEPSEEK,  Anthropic Claude (opcional) |
 | Fuentes | Google Fonts: Playfair Display + DM Sans |
 
 ---
