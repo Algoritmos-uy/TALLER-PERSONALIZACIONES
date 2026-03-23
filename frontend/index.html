@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MusaCreativa — Sublimaciones personalizadas e impresiones 3D de calidad. Materializamos tus ideas." />
+  <meta name="theme-color" content="#111009" />
+
+  <!-- Open Graph -->
+  <meta property="og:title"       content="MusaCreativa — Sublimaciones & Impresión 3D" />
+  <meta property="og:description" content="Materializamos tus ideas con sublimación y tecnología 3D." />
+  <meta property="og:type"        content="website" />
+
+  <title>MusaCreativa — Sublimaciones & Impresión 3D</title>
+
+  <!-- Google Fonts: Playfair Display + DM Sans + DM Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- ITCSS styles -->
+  <link rel="stylesheet" href="./styles/main.css" />
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════
+       HEADER FIJO
+  ════════════════════════════════════════════════════════ -->
+  <header class="c-header" role="banner">
+    <div class="c-header__inner">
+
+      <a href="#inicio" class="c-logo" aria-label="MusaCreativa — Ir al inicio">
+        <div class="c-logo__icon" aria-hidden="true">
+          <img src="assets/img/icons/musa.png" alt="MusaCreativa">
+        </div>
+        <span class="c-logo__text">Musa<span>Creativa</span></span>
+      </a>
+
+      <!-- Toggle de tema: claro / oscuro -->
+      <button
+        class="c-theme-toggle"
+        type="button"
+        aria-label="Cambiar tema"
+        aria-pressed="false"
+        title="Cambiar tema"
+      >
+        <span class="c-theme-toggle__icon" aria-hidden="true">🌙</span>
+      </button>
+
+      <!-- Navegación desktop -->
+      <nav class="c-nav" aria-label="Navegación principal">
+        <a href="#inicio"    class="c-nav__link">Inicio</a>
+        <a href="#productos" class="c-nav__link">Productos</a>
+        <a href="#cursos"    class="c-nav__link">Cursos</a>
+        <a href="#contacto"  class="c-nav__link">Contacto</a>
+      </nav>
+
+      <!-- Hamburger (mobile) -->
+      <button
+        class="c-hamburger"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span class="c-hamburger__line"></span>
+        <span class="c-hamburger__line"></span>
+        <span class="c-hamburger__line"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Navegación mobile (drawer) -->
+  <nav id="mobile-nav" class="c-nav-mobile" aria-label="Menú de navegación móvil">
+    <a href="#inicio"    class="c-nav-mobile__link">Inicio</a>
+    <a href="#productos" class="c-nav-mobile__link">Productos</a>
+    <a href="#cursos"    class="c-nav-mobile__link">Cursos</a>
+    <a href="#contacto"  class="c-nav-mobile__link">Contacto</a>
+  </nav>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- ── INICIO / SOBRE NOSOTROS ────────────────────────────────────────── -->
+    <section
+      id="inicio"
+      class="c-hero u-anchor-offset"
+      aria-labelledby="hero-title"
+    >
+      <div class="c-hero__noise" aria-hidden="true"></div>
+
+      <div class="o-container">
+        <div class="o-split">
+
+          <!-- Texto -->
+          <div>
+            <p class="c-hero__badge js-reveal">
+              Emprendimiento creativo · Desde 2022
+            </p>
+
+            <h1 class="c-hero__title js-reveal" data-delay="1" id="hero-title">
+              Ideas que
+              <em>cobran vida</em>
+            </h1>
+
+            <p class="c-hero__description js-reveal" data-delay="2">
+              Somos un emprendimiento apasionado por la creación. Combinamos
+              sublimación textil de alta calidad con impresión 3D de precisión
+              para convertir tus ideas en productos únicos, memorables y llenos
+              de personalidad.
+            </p>
+
+            <div class="o-flex o-flex--gap-4 o-flex--wrap js-reveal" data-delay="3">
+              <a href="#productos" class="c-btn c-btn--primary c-btn--lg">
+                <span class="c-btn__icon" aria-hidden="true">✦</span>
+                Ver productos
+              </a>
+              <a href="#contacto" class="c-btn c-btn--outline c-btn--lg">
+                Contactarnos
+              </a>
+            </div>
+          </div>
+
+          <!-- Imagen / Media -->
+          <div class="c-hero__media js-reveal" data-delay="2">
+            <div class="c-hero__img-wrap">
+             
+                <img
+                  src="assets/img/hero.png"
+                  alt="Vista del taller: sublimación e impresión 3D"
+                  width="600" height="750"
+                />
+            
+              <div class="c-hero__img-placeholder" role="img" aria-label="Imagen del emprendimiento">
+                <span class="c-hero__img-placeholder-text" aria-hidden="true">✦</span>
+              </div>
+            </div>
+
+            <!-- Floating stat card -->
+            <div class="c-hero__float-card" aria-label="Más de 200 proyectos realizados">
+              <div class="c-hero__float-card-number">200+</div>
+              <div class="c-hero__float-card-label">Proyectos realizados</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ── PRODUCTOS ──────────────────────────────────────────────────────── -->
+    <section
+      id="productos"
+      class="c-products o-section u-anchor-offset"
+      aria-labelledby="productos-title"
+    >
+      <div class="o-container">
+
+        <header class="c-products__header">
+          <p class="c-section-label js-reveal">Lo que hacemos</p>
+
+          <h2
+            class="c-section-title js-reveal"
+            data-delay="1"
+            id="productos-title"
+          >
+            Nuestros <span>productos</span>
+          </h2>
+
+          <p class="c-section-description js-reveal" data-delay="2">
+            Desde remeras personalizadas hasta prototipos funcionales.
+            Cada pieza es hecha con atención al detalle y materiales de calidad.
+          </p>
+
+          <!-- Filtros de categoría -->
+          <div
+            class="c-category-tabs js-reveal"
+            data-delay="3"
+            role="group"
+            aria-label="Filtrar productos por categoría"
+          >
+            <button class="c-tab-btn is-active" data-filter="all">Todos</button>
+            <button class="c-tab-btn" data-filter="sublimacion">Sublimaciones</button>
+            <button class="c-tab-btn" data-filter="impresion3d">Impresión 3D</button>
+          </div>
+        </header>
+
+        <!--
+          Grid de productos — poblado dinámicamente por JS (productCard.js).
+          El data-dynamic="products" puede usarse para hooks futuros.
+        -->
+        <div
+          id="products-grid"
+          class="o-grid o-grid--3"
+          aria-live="polite"
+          aria-label="Grilla de productos"
+          data-dynamic="products"
+        >
+          <!-- JS inserta las cards aquí -->
+        </div>
+
+      </div>
+    </section>
+
+
+    <hr class="c-divider" aria-hidden="true" />
+
+
+    <!-- ── CURSOS ─────────────────────────────────────────────────────────── -->
+    <section
+      id="cursos"
+      class="c-courses o-section u-anchor-offset"
+      aria-labelledby="cursos-title"
+    >
+      <div class="o-container">
+
+        <header class="u-mb-10">
+          <p class="c-section-label js-reveal">Formación</p>
+
+          <h2
+            class="c-section-title js-reveal"
+            data-delay="1"
+            id="cursos-title"
+          >
+            Cursos & <span>talleres</span>
+          </h2>
+
+          <p class="c-section-description js-reveal" data-delay="2">
+            Aprendé las técnicas detrás de nuestros productos.
+            Próximamente abrimos inscripciones presenciales y virtuales.
+          </p>
+        </header>
+
+        <!--
+          Grid de cursos — poblado dinámicamente por JS (courseCard.js).
+          Incluye fallback estático hasta que JS cargue los datos.
+        -->
+        <div
+          id="courses-grid"
+          class="o-grid o-grid--3"
+          aria-live="polite"
+          aria-label="Cursos disponibles"
+          data-dynamic="courses"
+        >
+          <!-- Fallback visible antes de que cargue JS -->
+          <div class="c-courses-placeholder">
+            <div class="c-courses-placeholder__icon" aria-hidden="true">📚</div>
+            <p class="c-courses-placeholder__text">Cursos en preparación</p>
+            <p class="c-courses-placeholder__sub">Próximamente disponibles</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ── CONTACTO ───────────────────────────────────────────────────────── -->
+    <section
+      id="contacto"
+      class="c-contact o-section u-anchor-offset"
+      aria-labelledby="contacto-title"
+    >
+      <div class="o-container">
+        <div class="c-contact__grid">
+
+          <!-- Info de contacto -->
+          <div>
+            <p class="c-section-label js-reveal">Hablemos</p>
+
+            <h2
+              class="c-section-title js-reveal"
+              data-delay="1"
+              id="contacto-title"
+            >
+              ¿Tenés un <span>proyecto</span>?
+            </h2>
+
+            <p class="c-section-description js-reveal" data-delay="2">
+              Contanos tu idea y te damos un presupuesto personalizado
+              sin cargo. Respondemos en menos de 24 horas.
+            </p>
+
+            <address class="c-contact__info u-mt-8 js-reveal" data-delay="3">
+              <div class="c-contact__detail">
+                <span class="c-contact__detail-icon" aria-hidden="true">📍</span>
+                <div class="c-contact__detail-text">
+                  <strong>Ubicación</strong>
+                  <!--  ✏️ Reemplazá con tu dirección  -->
+                  Tu ciudad, Estado, País
+                </div>
+              </div>
+              <div class="c-contact__detail">
+                <span class="c-contact__detail-icon" aria-hidden="true">⏰</span>
+                <div class="c-contact__detail-text">
+                  <strong>Horario de atención</strong>
+                  Lunes a viernes · 9:00 – 18:00
+                </div>
+              </div>
+              <div class="c-contact__detail">
+                <span class="c-contact__detail-icon" aria-hidden="true">✉️</span>
+                <div class="c-contact__detail-text">
+                  <strong>Email</strong>
+                  <!--  ✏️ Reemplazá con tu email  -->
+                  hola@musacreativa.com
+                </div>
+              </div>
+            </address>
+          </div>
+
+          <!-- Botones de acción -->
+          <div class="js-reveal" data-delay="2">
+            <div class="c-contact-buttons">
+
+              <a
+                href="mailto:hola@musacreativa.com.ar"
+                class="c-btn c-btn--mail c-btn--lg"
+                aria-label="Enviar un email a MusaCreativa"
+              >
+                <span class="c-btn__icon" aria-hidden="true">✉️</span>
+                Enviar mail
+              </a>
+
+              <a
+                href="https://wa.me/5491100000000?text=Hola!%20Me%20interesa%20saber%20m%C3%A1s%20sobre%20sus%20productos."
+                class="c-btn c-btn--whatsapp c-btn--lg"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contactar a MusaCreativa por WhatsApp (abre en nueva pestaña)"
+              >
+                <span class="c-btn__icon" aria-hidden="true">💬</span>
+                WhatsApp
+              </a>
+
+              <button
+                class="c-btn c-btn--location c-btn--lg"
+                data-modal-open
+                aria-label="Ver ubicación en mapa"
+                aria-haspopup="dialog"
+              >
+                <span class="c-btn__icon" aria-hidden="true">📍</span>
+                Cómo llegar
+              </button>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════ -->
+  <footer class="c-footer" role="contentinfo">
+    <div class="o-container">
+      <div class="c-footer__inner">
+        <p class="c-footer__copy">
+          &copy; <span id="footer-year"></span>
+          MusaCreativa &mdash; Todos los derechos reservados
+        </p>
+        <nav class="c-footer__links" aria-label="Links secundarios">
+          <a href="#inicio"    class="c-footer__link">Inicio</a>
+          <a href="#productos" class="c-footer__link">Productos</a>
+          <a href="#contacto"  class="c-footer__link">Contacto</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       MODAL: CÓMO LLEGAR / MAPA
+  ════════════════════════════════════════════════════════ -->
+  <div
+    class="c-modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    aria-hidden="true"
+  >
+    <div class="c-modal">
+
+      <div class="c-modal__header">
+        <h2 class="c-modal__title" id="modal-title">
+          <span aria-hidden="true">📍</span> Cómo llegar
+        </h2>
+        <button class="c-modal__close" aria-label="Cerrar ventana de mapa">✕</button>
+      </div>
+
+      <div class="c-modal__body">
+        <div class="c-modal__map">
+          <!--
+            ✏️  REEMPLAZÁ el src con tu embed de Google Maps:
+            1. Ir a maps.google.com
+            2. Buscar tu dirección → Compartir → Insertar mapa → Copiar iframe
+            3. Reemplazá el src completo abajo
+          -->
+         <iframe src="https://goo.su/Kc4urg" width="600" height="450" 
+            style="border:0;" allowfullscreen="" 
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        </div>
+      </div>
+
+      <div class="c-modal__footer">
+        <a
+          href="https://goo.su/L992f"
+          class="c-btn c-btn--primary"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Abrir ubicación en Google Maps (nueva pestaña)"
+        >
+          Abrir en Maps →
+        </a>
+        <button class="c-btn c-btn--ghost c-modal__close">
+          Cerrar
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       CHATBOT: MUSA
+  ════════════════════════════════════════════════════════ -->
+
+  <!-- Botón flotante -->
+  <button
+    class="c-chatbot-trigger"
+    aria-label="Abrir chat con Musa"
+    aria-expanded="false"
+    aria-controls="chatbot-panel"
+  >
+    <span class="c-chatbot-trigger__icon" aria-hidden="true">
+      <img src="assets/img/icons/musa.png" alt="">
+    </span>
+    <span class="c-chatbot-trigger__badge" aria-label="Nuevo mensaje" aria-hidden="true"></span>
+  </button>
+
+  <!-- Panel del chatbot -->
+  <section
+    id="chatbot-panel"
+    class="c-chatbot-panel"
+    aria-label="Chat con Musa, asistente virtual"
+    aria-hidden="true"
+  >
+
+    <div class="c-chatbot-panel__header">
+      <div class="c-chatbot-panel__avatar" aria-hidden="true">
+        <img src="assets/img/icons/musa.png" alt="">
+      </div>
+      <div class="c-chatbot-panel__info">
+        <div class="c-chatbot-panel__name">Musa</div>
+        <div class="c-chatbot-panel__status">En línea</div>
+      </div>
+    </div>
+
+    <!-- Historial de mensajes -->
+    <div
+      class="c-chatbot-panel__messages"
+      role="log"
+      aria-live="polite"
+      aria-relevant="additions"
+      aria-label="Mensajes del chat"
+    >
+      <div class="c-chat-msg c-chat-msg--bot">
+        <div class="c-chat-msg__bubble">
+          ¡Hola! Soy Musa ✦<br>
+          ¿En qué puedo ayudarte hoy?
+        </div>
+        <span class="c-chat-msg__time">Ahora</span>
+      </div>
+    </div>
+
+    <!-- Respuestas rápidas -->
+    <div
+      class="c-chatbot-panel__quick-replies"
+      aria-label="Respuestas rápidas sugeridas"
+    >
+      <button class="c-quick-reply">Ver productos</button>
+      <button class="c-quick-reply">Precios</button>
+      <button class="c-quick-reply">Cursos</button>
+    </div>
+
+    <!-- Input -->
+    <div class="c-chatbot-panel__input-area">
+      <textarea
+        class="c-chatbot-panel__input"
+        placeholder="Escribí tu mensaje..."
+        rows="1"
+        aria-label="Escribir mensaje para Musa"
+        maxlength="500"
+      ></textarea>
+      <button
+        class="c-chatbot-panel__send"
+        aria-label="Enviar mensaje"
+      >→</button>
+    </div>
+
+    <!-- Footer: cerrar chat -->
+    <div class="c-chatbot-panel__footer">
+      <button class="c-chatbot-panel__close-bottom" aria-label="Cerrar chat">Cerrar chat</button>
+    </div>
+
+  </section>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       SCRIPTS
+  ════════════════════════════════════════════════════════ -->
+  <script type="module" src="./js/main.js"></script>
+
+</body>
+</html>

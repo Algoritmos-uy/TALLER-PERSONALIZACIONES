@@ -1,0 +1,90 @@
+/* ==========================================================================
+   OBJECTS: Layout patterns
+   Class-based selectors for reusable layout abstractions
+   ========================================================================== */
+
+/* --- Container --- */
+.o-container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+.o-container--sm { max-width: var(--container-sm); }
+.o-container--md { max-width: var(--container-md); }
+.o-container--lg { max-width: var(--container-lg); }
+.o-container--2xl { max-width: var(--container-2xl); }
+
+@media (min-width: 768px) {
+  .o-container { padding-inline: var(--space-10); }
+}
+
+@media (min-width: 1024px) {
+  .o-container { padding-inline: var(--space-16); }
+}
+
+/* --- Section Wrapper --- */
+.o-section {
+  padding-block: var(--space-20);
+}
+
+.o-section--lg {
+  padding-block: var(--space-32);
+}
+
+/* --- Grid --- */
+.o-grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.o-grid--2 { grid-template-columns: repeat(1, 1fr); }
+.o-grid--3 { grid-template-columns: repeat(1, 1fr); }
+
+@media (min-width: 640px) {
+  .o-grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .o-grid--3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .o-grid--3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* --- Flex utilities --- */
+.o-flex        { display: flex; }
+.o-flex--center { align-items: center; justify-content: center; }
+.o-flex--between { align-items: center; justify-content: space-between; }
+.o-flex--gap-4  { gap: var(--space-4); }
+.o-flex--gap-6  { gap: var(--space-6); }
+.o-flex--col    { flex-direction: column; }
+.o-flex--wrap   { flex-wrap: wrap; }
+
+/* --- Split layout (image + text) --- */
+.o-split {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .o-split {
+    grid-template-columns: 1fr 1fr;
+  }
+  .o-split--reverse .o-split__media {
+    order: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .o-split {
+    grid-template-columns: 5fr 7fr;
+    gap: var(--space-20);
+  }
+}
+
+/* --- Stack (vertical spacing) --- */
+.o-stack > * + * { margin-top: var(--space-6); }
+.o-stack--sm > * + * { margin-top: var(--space-3); }
+.o-stack--lg > * + * { margin-top: var(--space-10); }

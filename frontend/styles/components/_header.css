@@ -1,0 +1,274 @@
+/* ==========================================================================
+   COMPONENT: Header & Navigation
+   ========================================================================== */
+
+.c-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-header);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  background: rgba(17, 16, 9, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: var(--border-width) solid transparent;
+  transition:
+    border-color var(--transition-base),
+    background var(--transition-base);
+}
+
+.c-header.is-scrolled {
+  border-bottom-color: var(--color-border);
+  background: rgba(17, 16, 9, 0.96);
+}
+
+.c-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+/* --- Logo --- */
+.c-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+}
+
+.c-logo__icon {
+  width: 36px;
+  height: 36px;
+  background: var(--color-primary);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-lg);
+  flex-shrink: 0;
+}
+
+.c-logo__text {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+}
+
+.c-logo__text span {
+  color: var(--color-primary);
+}
+
+/* --- Theme toggle (claro / oscuro) --- */
+.c-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 36px;
+  padding: 6px;
+  background: transparent;
+  border: var(--border-width) solid transparent;
+  color: var(--color-text);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+  margin-inline: var(--space-4);
+}
+
+.c-theme-toggle__icon {
+  font-size: 18px;
+  line-height: 1;
+  display: inline-block;
+}
+
+.c-theme-toggle:hover {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+.c-theme-toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(201, 97, 42, 0.12);
+  transform: translateY(-1px);
+}
+
+/* Small screens: mostrar el toggle a la izquierda del hamburger */
+@media (max-width: 767px) {
+  .c-header__inner {
+    gap: var(--space-4);
+  }
+  .c-theme-toggle {
+    order: 2; /* después del logo, antes del hamburger */
+  }
+}
+
+/* --- Nav --- */
+.c-nav {
+  display: none;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.c-nav__link {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.c-nav__link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width var(--transition-base);
+}
+
+.c-nav__link:hover,
+.c-nav__link.is-active {
+  color: var(--color-white);
+}
+
+.c-nav__link:hover::after,
+.c-nav__link.is-active::after {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .c-nav {
+    display: flex;
+  }
+}
+
+/* Theme-specific overrides: en tema claro los enlaces inactivos son blancos y
+   los activos/hover usan --color-primary para resaltarlos. */
+[data-theme="light"] .c-nav__link {
+  color: var(--color-white);
+}
+
+[data-theme="light"] .c-nav__link:hover,
+[data-theme="light"] .c-nav__link.is-active {
+  color: var(--color-primary-light);
+}
+
+/* --- Hamburger --- */
+.c-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.c-hamburger:hover {
+  background: var(--color-surface);
+}
+
+.c-hamburger__line {
+  width: 100%;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transform-origin: center;
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base),
+    width var(--transition-base);
+}
+
+.c-hamburger__line:nth-child(2) {
+  width: 70%;
+}
+
+.c-hamburger.is-active .c-hamburger__line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.c-hamburger.is-active .c-hamburger__line:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-8px);
+}
+.c-hamburger.is-active .c-hamburger__line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .c-hamburger {
+    display: none;
+  }
+}
+
+/* --- Mobile Nav Drawer --- */
+.c-nav-mobile {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  background: var(--color-bg-alt);
+  border-bottom: var(--border-width) solid var(--color-border);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transform: translateY(-110%);
+  opacity: 0;
+  transition:
+    transform var(--transition-slow),
+    opacity var(--transition-slow);
+  z-index: calc(var(--z-header) - 1);
+}
+
+.c-nav-mobile.is-open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.c-nav-mobile__link {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  color: var(--color-text-muted);
+  padding: var(--space-3) 0;
+  border-bottom: var(--border-width) solid var(--color-border);
+  transition:
+    color var(--transition-fast),
+    padding-left var(--transition-fast);
+}
+
+.c-nav-mobile__link:hover {
+  color: var(--color-white);
+  padding-left: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .c-nav-mobile {
+    display: none;
+  }
+}

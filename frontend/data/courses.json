@@ -1,0 +1,30 @@
+[
+  {
+    "id": "cur-001",
+    "title": "Sublimación desde Cero",
+    "icon": "sublimacion.png",
+    "image": "assets/courses/sublimacion.png",
+    "duration": "4 semanas",
+    "modality": "Presencial",
+    "description": "Aprende el proceso completo de sublimación: desde diseño digital hasta la aplicación térmica final. Materiales incluidos.",
+    "status": "proximamente"
+  },
+  {
+    "id": "cur-002",
+    "title": "Introducción a la Impresión 3D",
+    "icon": "🖨️",
+    "duration": "3 semanas",
+    "modality": "Híbrido",
+    "description": "Domina el modelado básico y la operación de impresoras FDM. Llevate tu primera pieza terminada.",
+    "status": "proximamente"
+  },
+  {
+    "id": "cur-003",
+    "title": "Emprendimiento Creativo",
+    "icon": "🚀",
+    "duration": "6 semanas",
+    "modality": "Online",
+    "description": "Convierte tu pasión creativa en un negocio rentable. Marketing, costos y ventas para artesanos digitales.",
+    "status": "proximamente"
+  }
+]

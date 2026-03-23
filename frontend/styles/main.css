@@ -1,0 +1,35 @@
+/* ==========================================================================
+   MAIN.CSS — ITCSS Entry Point
+   Import order follows the ITCSS specificity triangle:
+   Settings → Generic → Elements → Objects → Components → Utilities
+   ========================================================================== */
+
+/* ── 1. SETTINGS ────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&display=swap');
+
+@import './settings/_variables.css';
+
+/* ── 2. TOOLS ────────────────────────────────────────────────────────────
+   (vacío por ahora — agregar mixins / custom properties dinámicas aquí)
+   ────────────────────────────────────────────────────────────────────── */
+
+/* ── 3. GENERIC ──────────────────────────────────────────────────────────── */
+@import './generic/_reset.css';
+
+/* ── 4. ELEMENTS ─────────────────────────────────────────────────────────── */
+@import './elements/_elements.css';
+
+/* ── 5. OBJECTS ──────────────────────────────────────────────────────────── */
+@import './objects/_objects.css';
+
+/* ── 6. COMPONENTS ───────────────────────────────────────────────────────── */
+@import './components/_header.css';
+@import './components/_hero.css';
+@import './components/_cards.css';
+@import './components/_buttons.css';
+@import './components/_modal.css';
+@import './components/_chatbot.css';
+@import './components/_contact.css';
+
+/* ── 7. UTILITIES ────────────────────────────────────────────────────────── */
+@import './utilities/_utilities.css';

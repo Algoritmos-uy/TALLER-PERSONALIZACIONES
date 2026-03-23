@@ -1,0 +1,62 @@
+[
+  {
+    "id": "sub-001",
+    "category": "sublimacion",
+    "title": "Remeras Personalizadas",
+    "description": "Diseños únicos sobre telas de alta calidad. Imágenes vibrantes que no se destiñen con el lavado.",
+    "image": "assets/img/remeras.png",
+    "icon": "👕",
+    "tag": "Sublimación",
+    "price": "Consultar"
+  },
+  {
+    "id": "sub-002",
+    "category": "sublimacion",
+    "title": "Tazas & Tumblers",
+    "description": "Regalos corporativos y personales con sublimación envolvente de 360°. Resistentes al lavavajillas.",
+    "image": "assets/img/tazas-&-tumblers.png",
+    "icon": "☕",
+    "tag": "Sublimación",
+    "price": "Consultar"
+  },
+  {
+    "id": "sub-003",
+    "category": "sublimacion",
+    "title": "Almohadas & Cojines",
+    "description": "Estampados personalizados para decoración del hogar. Terminación profesional con costura resistente.",
+    "image": "assets/img/product-3.avif",
+    "icon": "🛋️",
+    "tag": "Sublimación",
+    "price": "Consultar"
+  },
+  {
+    "id": "imp-001",
+    "category": "impresion3d",
+    "title": "Figuras Decorativas",
+    "description": "Modelos 3D únicos para decoración. Alta definición de detalle en filamento PLA y PETG.",
+    "image": "assets/img/candelero.png",
+    "icon": "🏺",
+    "tag": "Impresión 3D",
+    "price": "Consultar"
+  },
+  {
+    "id": "imp-002",
+    "category": "impresion3d",
+    "title": "Piezas Funcionales",
+    "description": "Repuestos, soportes y organizadores a medida. Tolerancias precisas para uso cotidiano.",
+    "image": "assets/img/florero-cuenco.png ",
+    "icon": "⚙️",
+    "tag": "Impresión 3D",
+    "price": "Consultar"
+  },
+  {
+    "id": "imp-003",
+    "category": "impresion3d",
+    "title": "Prototipos & Maquetas",
+    "description": "Prototipado rápido para diseñadores y emprendedores. Iteración ágil desde archivo hasta pieza.",
+    "image": "assets/img/flamengos.png ",
+    "icon": "📐",
+    "tag": "Impresión 3D",
+    "price": "Consultar"
+  }
+]

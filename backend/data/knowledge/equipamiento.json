@@ -1,0 +1,28 @@
+{
+  "categoria": "equipamiento",
+  "items": [
+    {
+      "nombre": "Prensa térmica plana",
+      "uso": "Sublimación de prendas planas: remeras, bolsas, almohadones",
+      "temperatura_rango": "180-200°C",
+      "tiempo_rango": "30-60 segundos"
+    },
+    {
+      "nombre": "Prensa 3D (para tazas)",
+      "uso": "Sublimación de tazas cilíndricas y tumblers",
+      "temperatura_rango": "175-190°C",
+      "tiempo_rango": "150-180 segundos"
+    },
+    {
+      "nombre": "Impresora de sublimación",
+      "uso": "Impresión de diseños en papel de sublimación con tintas especiales",
+      "marcas": ["Epson EcoTank", "Sawgrass"]
+    },
+    {
+      "nombre": "Impresora 3D FDM",
+      "uso": "Fabricación de piezas capa a capa con filamento fundido",
+      "marcas": ["Bambu Lab", "Creality Ender", "Prusa"],
+      "precision": "±0.2mm"
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+/* ==========================================================================
+   COMPONENT: Contact section & Footer
+   ========================================================================== */
+
+/* --- Contact Section --- */
+.c-contact {
+  background: var(--color-bg-alt);
+  position: relative;
+  overflow: hidden;
+}
+
+.c-contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+}
+
+.c-contact__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .c-contact__grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+.c-contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.c-contact__detail {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.c-contact__detail-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+.c-contact__detail-text strong {
+  display: block;
+  color: var(--color-white);
+  font-size: var(--text-base);
+  margin-bottom: var(--space-1);
+}
+
+/* --- Footer --- */
+.c-footer {
+  padding: var(--space-8) 0;
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.c-footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .c-footer__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.c-footer__copy {
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+}
+
+.c-footer__links {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.c-footer__link {
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+  transition: color var(--transition-fast);
+}
+
+.c-footer__link:hover {
+  color: var(--color-primary);
+}
+
+/* --- Products section --- */
+.c-products {
+  background: var(--color-bg);
+}
+
+.c-products__header {
+  margin-bottom: var(--space-10);
+}
+
+/* --- Courses section --- */
+.c-courses {
+  background: var(--color-bg-alt);
+  position: relative;
+}
+
+.c-courses::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+}
+
+/* --- Section dividers --- */
+.c-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-border), transparent);
+  border: none;
+  margin: 0;
+}
+
+/* --- Scroll reveal animation --- */
+.js-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.js-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.js-reveal[data-delay="1"] { transition-delay: 0.1s; }
+.js-reveal[data-delay="2"] { transition-delay: 0.2s; }
+.js-reveal[data-delay="3"] { transition-delay: 0.3s; }
+.js-reveal[data-delay="4"] { transition-delay: 0.4s; }
+.js-reveal[data-delay="5"] { transition-delay: 0.5s; }

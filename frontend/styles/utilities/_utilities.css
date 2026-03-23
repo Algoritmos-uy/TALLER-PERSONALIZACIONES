@@ -1,0 +1,58 @@
+/* ==========================================================================
+   UTILITIES: Helper classes
+   Single-purpose utility classes
+   ========================================================================== */
+
+/* --- Text alignment --- */
+.u-text-center  { text-align: center; }
+.u-text-left    { text-align: left; }
+.u-text-right   { text-align: right; }
+
+/* --- Text colors --- */
+.u-text-primary { color: var(--color-primary) !important; }
+.u-text-accent  { color: var(--color-accent) !important; }
+.u-text-muted   { color: var(--color-text-muted) !important; }
+.u-text-faint   { color: var(--color-text-faint) !important; }
+.u-text-white   { color: var(--color-white) !important; }
+
+/* --- Font --- */
+.u-font-display { font-family: var(--font-display) !important; }
+.u-font-mono    { font-family: var(--font-mono) !important; }
+.u-font-bold    { font-weight: var(--weight-bold) !important; }
+.u-italic       { font-style: italic; }
+
+/* --- Spacing --- */
+.u-mt-4  { margin-top: var(--space-4); }
+.u-mt-6  { margin-top: var(--space-6); }
+.u-mt-8  { margin-top: var(--space-8); }
+.u-mt-10 { margin-top: var(--space-10); }
+.u-mt-12 { margin-top: var(--space-12); }
+
+.u-mb-4  { margin-bottom: var(--space-4); }
+.u-mb-6  { margin-bottom: var(--space-6); }
+.u-mb-8  { margin-bottom: var(--space-8); }
+
+/* --- Display --- */
+.u-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.u-hidden { display: none !important; }
+
+/* --- Body locked (for modals) --- */
+body.is-locked {
+  overflow: hidden;
+}
+
+/* --- PT for header offset (anchor scrolling) --- */
+.u-anchor-offset {
+  scroll-margin-top: var(--header-height);
+}

@@ -1,0 +1,51 @@
+{
+  "categoria": "cursos",
+  "estado_general": "proximamente",
+  "items": [
+    {
+      "id": "cur-001",
+      "titulo": "Sublimación desde Cero",
+      "duracion": "4 semanas",
+      "modalidad": "Presencial",
+      "contenido": [
+        "Fundamentos del proceso de sublimación",
+        "Diseño digital para sublimación (Canva / Illustrator básico)",
+        "Preparación de prensa y temperatura",
+        "Aplicación en distintos sustratos",
+        "Errores comunes y cómo evitarlos"
+      ],
+      "incluye": "Materiales de práctica",
+      "precio": "A confirmar"
+    },
+    {
+      "id": "cur-002",
+      "titulo": "Introducción a la Impresión 3D",
+      "duracion": "3 semanas",
+      "modalidad": "Híbrido",
+      "contenido": [
+        "Funcionamiento de impresoras FDM",
+        "Modelado básico en TinkerCAD",
+        "Slicing con Bambu Studio o Cura",
+        "Calibración y mantenimiento",
+        "Postprocesado y acabados"
+      ],
+      "incluye": "Acceso a impresoras del taller + filamento",
+      "precio": "A confirmar"
+    },
+    {
+      "id": "cur-003",
+      "titulo": "Emprendimiento Creativo",
+      "duracion": "6 semanas",
+      "modalidad": "Online",
+      "contenido": [
+        "Estructura de costos para productos creativos",
+        "Fotografía de producto con celular",
+        "Marketing en redes sociales",
+        "Gestión de pedidos y clientes",
+        "Plataformas de venta online"
+      ],
+      "incluye": "Templates descargables + comunidad privada",
+      "precio": "A confirmar"
+    }
+  ]
+}

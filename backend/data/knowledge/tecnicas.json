@@ -1,0 +1,19 @@
+{
+  "categoria": "tecnicas",
+  "items": [
+    {
+      "nombre": "Sublimación térmica",
+      "descripcion": "Proceso donde la tinta pasa de estado sólido a gas bajo calor y presión, impregnándose en el tejido poliéster.",
+      "temperatura": "180-200°C",
+      "tiempo": "30-60 segundos",
+      "requisitos": ["papel de sublimación", "tinta sublimable", "prensa térmica", "substrato poliéster"]
+    },
+    {
+      "nombre": "Impresión FDM (Fused Deposition Modeling)",
+      "descripcion": "La impresora deposita filamento fundido capa a capa para crear objetos tridimensionales.",
+      "materiales": ["PLA", "PETG", "ABS", "TPU"],
+      "precision": "±0.2mm",
+      "tiempo": "varía según tamaño y complejidad"
+    }
+  ]
+}

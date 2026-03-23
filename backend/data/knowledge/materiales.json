@@ -1,0 +1,25 @@
+{
+  "categoria": "materiales",
+  "items": [
+    {
+      "nombre": "PLA",
+      "descripcion": "Material biodegradable ideal para figuras decorativas y prototipos. Fácil de imprimir, gran variedad de colores.",
+      "usos": ["decoración", "prototipos", "regalos"]
+    },
+    {
+      "nombre": "PETG",
+      "descripcion": "Resistente al impacto y la humedad. Ideal para piezas funcionales y de uso cotidiano.",
+      "usos": ["piezas funcionales", "contenedores", "uso exterior"]
+    },
+    {
+      "nombre": "Tela sublimable",
+      "descripcion": "Polyester 100% o mezclas con alto contenido poliéster. Necesario para sublimación correcta.",
+      "usos": ["remeras", "camisetas", "bolsas"]
+    },
+    {
+      "nombre": "Cerámica sublimable",
+      "descripcion": "Tazas y platos con recubrimiento especial para sublimación. Resistente al lavavajillas.",
+      "usos": ["tazas", "platos", "regalos corporativos"]
+    }
+  ]
+}

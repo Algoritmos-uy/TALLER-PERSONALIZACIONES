@@ -1,0 +1,164 @@
+/* ==========================================================================
+   SETTINGS: Variables
+   Global design tokens — colors, typography, spacing, breakpoints
+   ========================================================================== */
+
+:root {
+   /* --- Color Palette --- */
+   --color-bg: #111009;
+   --color-bg-alt: #1a1812;
+   --color-surface: #22201a;
+   --color-surface-2: #2d2b24;
+   --color-border: #3a3830;
+
+   --color-primary: #c9612a; /* terracota */
+   --color-primary-light: #e07a45;
+   --color-primary-dark: #a04a1e;
+
+   --color-accent: #d4af6e; /* oro cálido */
+   --color-accent-light: #e8cc96;
+
+   --color-text: #f0ebe0;
+   --color-text-muted: #a09880;
+   --color-text-faint: #6b6455;
+
+   --color-white: #faf7f0;
+   --color-black: #0d0c09;
+   /* Heading color (usar para h1/h2/h3) */
+   --color-heading: var(--color-white);
+
+   /* --- Typography --- */
+   --font-display: "Playfair Display", Georgia, serif;
+   --font-body: "DM Sans", system-ui, sans-serif;
+   --font-mono: "DM Mono", monospace;
+
+   --text-xs: 0.75rem;
+   --text-sm: 0.875rem;
+   --text-base: 1rem;
+   --text-lg: 1.125rem;
+   --text-xl: 1.25rem;
+   --text-2xl: 1.5rem;
+   --text-3xl: 1.875rem;
+   --text-4xl: 2.25rem;
+   --text-5xl: 3rem;
+   --text-6xl: 3.75rem;
+   --text-7xl: 4.5rem;
+
+   --weight-regular: 400;
+   --weight-medium: 500;
+   --weight-bold: 700;
+   --weight-black: 900;
+
+   --leading-tight: 1.1;
+   --leading-snug: 1.3;
+   --leading-normal: 1.6;
+   --leading-loose: 1.8;
+
+   --tracking-tight: -0.03em;
+   --tracking-normal: 0em;
+   --tracking-wide: 0.08em;
+   --tracking-wider: 0.15em;
+
+   /* --- Spacing --- */
+   --space-1: 0.25rem;
+   --space-2: 0.5rem;
+   --space-3: 0.75rem;
+   --space-4: 1rem;
+   --space-5: 1.25rem;
+   --space-6: 1.5rem;
+   --space-8: 2rem;
+   --space-10: 2.5rem;
+   --space-12: 3rem;
+   --space-16: 4rem;
+   --space-20: 5rem;
+   --space-24: 6rem;
+   --space-32: 8rem;
+   --space-40: 10rem;
+
+   /* --- Layout --- */
+   --container-sm: 640px;
+   --container-md: 768px;
+   --container-lg: 1024px;
+   --container-xl: 1280px;
+   --container-2xl: 1440px;
+
+   --header-height: 4.5rem;
+
+   /* --- Borders & Radius --- */
+   --radius-sm: 4px;
+   --radius-md: 8px;
+   --radius-lg: 16px;
+   --radius-xl: 24px;
+   --radius-full: 9999px;
+
+   --border-width: 1px;
+   --border-width-2: 2px;
+
+   /* --- Shadows --- */
+   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+   --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.6);
+   --shadow-xl: 0 24px 60px rgba(0, 0, 0, 0.7);
+   --shadow-glow: 0 0 32px rgba(201, 97, 42, 0.25);
+
+   /* --- Transitions --- */
+   --transition-fast: 150ms ease;
+   --transition-base: 250ms ease;
+   --transition-slow: 400ms ease;
+   --transition-spring: 350ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+   /* --- Z-index --- */
+   --z-base: 1;
+   --z-above: 10;
+   --z-header: 100;
+   --z-modal: 200;
+   --z-chatbot: 150;
+   --z-overlay: 190;
+   --z-toast: 300;
+
+   /* --- Breakpoints (reference only, use in media queries) ---
+     sm:  640px
+     md:  768px
+     lg:  1024px
+     xl:  1280px
+  */
+}
+
+/* --------------------------------------------------------------------------
+   Light theme (alta legibilidad)
+   Para activar: añadir `data-theme="light"` en el elemento <html> o <body>.
+   Las variables mantienen los mismos nombres para que el resto de CSS
+   funcione sin cambios — solo se sobrescriben los valores.
+   Los colores se han ajustado para mejorar contraste WCAG (valores aproximados)
+-------------------------------------------------------------------------- */
+
+[data-theme="light"] {
+   /* --- Backgrounds & surfaces --- */
+   --color-bg: #faf7f0; /* base claro (inverso de color-white) */
+   --color-bg-alt: #f4f0e8;
+   --color-surface: #ffffff;
+   --color-surface-2: #fcfbf8;
+   --color-border: #e6dfd6;
+
+   /* --- Primary (terracota ajustado para buen contraste sobre claro) --- */
+   /* primary sobre fondo claro -> contraste ~7:1 (bueno para texto y UI)
+     white sobre primary -> contraste similar, seguro para botones con texto blanco */
+   --color-primary: #9a3b16; /* terracota oscuro */
+   --color-primary-light: #b85a2a;
+   --color-primary-dark: #7b2f11;
+
+   /* --- Accent (oro cálido ajustado) --- */
+   --color-accent: #b8874a; /* oro más oscuro para legibilidad */
+   --color-accent-light: #d3aa6e;
+
+   /* --- Text --- */
+   --color-text: #111009; /* texto principal oscuro (inverso de tema oscuro) */
+   /* Aumentamos el contraste para elementos de texto secundarios (nav inactivos, etc.) */
+   --color-text-muted: #3b342d;
+   --color-text-faint: #7a7264;
+
+   --color-white: #ffffff;
+   --color-black: #0d0c09;
+   /* Heading color (negro en tema claro) */
+   --color-heading: #000000;
+}
