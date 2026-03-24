@@ -7,13 +7,6 @@
 import { sanitize, formatTime, sleep, tokenizeMessage, truncateText } from './utils.js';
 import { api } from './api.js';
 
-const MOCK_RESPONSES = [
-  "¡Hola! Soy Musa 🌟 Puedo ayudarte con info sobre nuestros productos, precios y cursos.",
-  "Para sublimaciones personalizadas, escribinos también por WhatsApp para ver diseños.",
-  "Nuestras impresiones 3D están disponibles en PLA, PETG y más materiales. ¿Qué necesitás?",
-  "Los cursos se anuncian próximamente. ¿Querés que te avisemos cuando estén disponibles?",
-  "Podés contactarnos por mail o WhatsApp para presupuestos personalizados 🎨",
-];
 
 export function initChatbot() {
   const trigger      = document.querySelector('.c-chatbot-trigger');
@@ -46,6 +39,25 @@ export function initChatbot() {
     panel.classList.remove('is-open');
     trigger.classList.remove('is-open');
     trigger.setAttribute('aria-expanded', 'false');
+  });
+
+  // Vaciar chat (botón añadido al footer)
+  const clearBottomBtn = panel.querySelector('.c-chatbot-panel__clear-bottom');
+  clearBottomBtn?.addEventListener('click', () => {
+    // Confirmación simple antes de vaciar
+    try {
+      const ok = window.confirm('¿Vaciar todo el chat? Esta acción no se puede deshacer.');
+      if (!ok) return;
+    } catch (e) {
+      // si window.confirm no está disponible, no hacemos nada
+      return;
+    }
+    if (messages) messages.innerHTML = '';
+    // Restaurar saludo inicial para que el chat no quede vacío
+    appendMessage('¡Hola! Soy Musa ✦<br>¿En qué puedo ayudarte hoy?', 'bot');
+    // Limpiar cualquier conversación persistida
+    try { sessionStorage.removeItem('musa_conversation'); } catch (e) { }
+    scrollMessages();
   });
 
   // ── Send on button click ──────────────────────────────────────────────────
@@ -96,12 +108,60 @@ export function initChatbot() {
       await typeReply(typingWrap, reply);
 
     } catch (err) {
-      // Fallback local si hay error de red o servidor
+      // Si hay error de red o servidor, no usar automáticamente respuestas mockadas.
+      // En su lugar mostramos un mensaje controlado que indique el problema y sugiera contacto.
       console.warn('[Chatbot] error al llamar al backend:', err);
-      const reply = getMockReply(trimmed);
-      // Asegurarnos de mostrarlo con el efecto typing también
-      const wrap = await showTyping();
-      await typeReply(wrap, reply);
+      const fallback = 'No se pudo conectar con el servicio de IA en este momento. Intentá nuevamente más tarde o dirigite a la sección "Contacto" para asistencia personalizada.';
+      // Mostrar una burbuja de error con acciones: Reintentar / Usar respuestas locales
+      const errorWrap = document.createElement('div');
+      errorWrap.className = 'c-chat-msg c-chat-msg--bot c-chat-error';
+      errorWrap.innerHTML = `
+        <div class="c-chat-msg__bubble">
+          <div class="c-chat-error__text">${sanitize(fallback)}</div>
+          <div class="c-chat-error__actions">
+            <button class="c-btn c-btn--ghost c-chatbot-retry">Reintentar</button>
+            <button class="c-btn c-btn--outline c-chatbot-use-local">Usar respuestas locales</button>
+          </div>
+        </div>
+        <span class="c-chat-msg__time">${formatTime()}</span>
+      `;
+      messages?.appendChild(errorWrap);
+      scrollMessages();
+
+      const retryBtn = errorWrap.querySelector('.c-chatbot-retry');
+      const localBtn = errorWrap.querySelector('.c-chatbot-use-local');
+
+      // Reintentar: reenvía el mismo mensaje (se mostrará la burbuja de usuario otra vez)
+      retryBtn?.addEventListener('click', async () => {
+        retryBtn.disabled = true;
+        localBtn.disabled = true;
+        // Rellenar el input con el texto y reenviar para mantener la UX esperada
+        if (input) {
+          input.value = trimmed;
+          // Llamamos a sendMessage con el contenido; esto añadirá la burbuja de usuario
+          sendMessage(trimmed);
+        } else {
+          // si no hay input disponible, intentar reintentar silenciosamente
+          sendMessage(trimmed);
+        }
+        // opcional: remover la burbuja de error
+        try { errorWrap.remove(); } catch (e) { }
+      });
+
+      // Usar respuestas locales: mostrar reply mock sin llamar al backend
+      localBtn?.addEventListener('click', async () => {
+        retryBtn.disabled = true;
+        localBtn.disabled = true;
+        try {
+          const typingWrap = await showTyping();
+          const mockReply = getMockReply(trimmed);
+          await typeReply(typingWrap, mockReply);
+        } catch (e) {
+          console.error('Error mostrando respuesta local:', e);
+          appendMessage(fallback, 'bot');
+        }
+        try { errorWrap.remove(); } catch (e) { }
+      });
     } finally {
       sendBtn.disabled = false;
       input?.focus();

@@ -378,7 +378,8 @@
   background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.02));
 }
 
-.c-chatbot-panel__close-bottom {
+.c-chatbot-panel__close-bottom,
+.c-chatbot-panel__clear-bottom {
   background: transparent;
   border: var(--border-width) solid var(--color-border);
   padding: var(--space-2) var(--space-4);
@@ -387,8 +388,17 @@
   color: var(--color-text);
 }
 
-.c-chatbot-panel__close-bottom:hover {
+.c-chatbot-panel__close-bottom:hover,
+.c-chatbot-panel__clear-bottom:hover {
   background: var(--color-surface-2);
   border-color: var(--color-primary);
   color: var(--color-white);
+}
+
+/* Botón 'Vaciar chat' — similar al resto pero con acento para indicar acción de limpieza */
+
+
+.c-chatbot-panel__clear-bottom:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

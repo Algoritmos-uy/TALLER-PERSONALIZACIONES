@@ -171,6 +171,27 @@
   color: var(--color-primary-light);
 }
 
+/* Igualar comportamiento en modo oscuro: enlaces inactivos blancos,
+   hover / active usan --color-primary-light (mismo comportamiento que en claro). */
+[data-theme="dark"] .c-nav__link {
+  color: var(--color-white);
+}
+
+[data-theme="dark"] .c-nav__link:hover,
+[data-theme="dark"] .c-nav__link.is-active {
+  color: var(--color-primary-light);
+}
+
+/* Mobile nav: aplicar las mismas reglas para el drawer */
+[data-theme="dark"] .c-nav-mobile__link {
+  color: var(--color-white);
+}
+
+[data-theme="dark"] .c-nav-mobile__link:hover {
+  color: var(--color-primary-light);
+  padding-left: var(--space-3);
+}
+
 /* --- Hamburger --- */
 .c-hamburger {
   display: flex;
