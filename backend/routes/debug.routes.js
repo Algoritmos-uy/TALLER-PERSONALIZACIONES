@@ -1,7 +1,7 @@
+// Debug routes removed — placeholder router to avoid import errors.
 const express = require('express');
 const router = express.Router();
-const ctrl = require('../controllers/debug.controller');
 
-router.get('/diag', ctrl.ping);
+router.get('/diag', (_req, res) => res.status(410).json({ error: 'Debug routes removed' }));
 
 module.exports = router;

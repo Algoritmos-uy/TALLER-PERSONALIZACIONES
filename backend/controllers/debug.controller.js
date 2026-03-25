@@ -1,26 +1,8 @@
-/**
- * debug.controller.js
- * Ruta de diagnóstico temporal para comprobar si la app ve la clave y puede
- * alcanzar la API externa. No expone la clave.
- */
-const fetch = global.fetch || require('node-fetch');
+// Debug controller removed — left placeholder to avoid module-not-found errors.
+// This file previously exposed a /api/debug route for local diagnostics.
+// The route has been removed from server routing; keeping this placeholder
+// avoids breaking environments that still `require` this file.
 
-exports.ping = async (req, res) => {
-  try {
-    const hasKey = !!process.env.DEEPSEEK_API_KEY;
-
-    // Intento rápido de conectar a la URL base de DeepSeek (HEAD)
-    let deepseek = { ok: null, status: null, error: null };
-    try {
-      const r = await fetch('https://api.deepseek.com', { method: 'HEAD', redirect: 'follow' });
-      deepseek.ok = r.ok;
-      deepseek.status = r.status;
-    } catch (e) {
-      deepseek.error = String(e.message || e);
-    }
-
-    return res.json({ hasKey, deepseek });
-  } catch (err) {
-    return res.status(500).json({ error: String(err.message || err) });
-  }
+exports.ping = async (_req, res) => {
+  res.status(410).json({ error: 'Debug endpoint removed' });
 };

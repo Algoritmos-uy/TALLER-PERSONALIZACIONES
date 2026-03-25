@@ -162,21 +162,10 @@ Usuario: "¿Qué es la sublimación?"
 Respuesta:
 La sublimación es una técnica de impresión que permite transferir diseños a distintos materiales mediante calor, logrando acabados duraderos y de alta calidad. Aquí se utiliza para personalizar diversos productos.`;
 
-// ── (Opcional) Implementación real con Anthropic ──────────────────────────────
-/*
-const Anthropic = require('@anthropic-ai/sdk');
-const client    = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-
-async function chatAI(message) {
-  const response = await client.messages.create({
-    model:      'claude-opus-4-5',
-    max_tokens: 300,
-    system:     buildSystemPrompt(),
-    messages:   [{ role: 'user', content: message }],
-  });
-  return response.content[0].text;
-}
-*/
+// Nota: la integración con proveedores externos (Anthropic/OpenAI) se puede
+// activar en este servicio. El bloque de ejemplo para Anthropic fue removido
+// para mantener el archivo limpio; si necesitás soporte concreto, lo podemos
+// añadir de forma modular en un archivo separado.
 
 // Helper: detect explicit 'remeras por cantidad' + 'presupuesto' intent in payload (string or conversation)
 function isRemerasBulkBudget(input) {
