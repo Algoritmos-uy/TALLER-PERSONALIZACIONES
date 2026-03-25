@@ -11,6 +11,26 @@
 const path = require('path');
 const fs   = require('fs');
 
+// Compatibilidad con entornos de Node donde `fetch` no está disponible globalmente.
+// Intentamos usar global.fetch, luego una implementación instalada (`node-fetch`),
+// y por último `undici` si está disponible. Si no hay ninguno, lanzamos error
+// claro desde la función que realiza la petición.
+let fetchImpl = (typeof fetch !== 'undefined') ? fetch : null;
+if (!fetchImpl) {
+  try {
+    // node-fetch v2 es compatible con require; v3 es ESM y puede fallar.
+    const nf = require('node-fetch');
+    fetchImpl = nf && (nf.default || nf);
+    } catch (e) {
+      try {
+        // undici expone fetch como función
+        fetchImpl = require('undici').fetch;
+      } catch (e) {
+        fetchImpl = null;
+      }
+  }
+}
+
 // ── Knowledge base local ──────────────────────────────────────────────────────
 const KB_DIR = path.join(__dirname, '../data/knowledge');
 
@@ -234,7 +254,8 @@ async function chatDeepSeek(message) {
       max_tokens: 300,
     };
 
-    const res = await fetch(url, {
+  if (!fetchImpl) throw new Error('fetch no está disponible en este entorno de Node. Instalá "node-fetch" o "undici", o actualizá Node a >=18.');
+  const res = await fetchImpl(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

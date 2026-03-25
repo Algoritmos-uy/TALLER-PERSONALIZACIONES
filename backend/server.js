@@ -3,8 +3,10 @@
  * Entry point del backend — Express + rutas modulares
  */
 
-// Cargar variables de entorno desde .env (si existe)
-require('dotenv').config();
+// Cargar variables de entorno desde .env (opcional localmente)
+if (process.env.NODE_ENV !== 'production') {
+  try { require('dotenv').config(); } catch (e) { /* opcional: log */ }
+}
 const express = require('express');
 const path    = require('path');
 const cors    = require('cors');
@@ -13,6 +15,7 @@ const cors    = require('cors');
 const productsRoutes = require('./routes/products.routes');
 const coursesRoutes  = require('./routes/courses.routes');
 const chatbotRoutes  = require('./routes/chatbot.routes');
+const debugRoutes    = require('./routes/debug.routes');
 
 const app  = express();
 const PORT = process.env.PORT || 3000;
@@ -28,6 +31,7 @@ app.use(express.static(path.join(__dirname, '../frontend')));
 app.use('/api/products', productsRoutes);
 app.use('/api/courses',  coursesRoutes);
 app.use('/api/chatbot',  chatbotRoutes);
+app.use('/api/debug',    debugRoutes);
 
 // ── Health check ──────────────────────────────────────────────────────────────
 app.get('/api/health', (_req, res) => {

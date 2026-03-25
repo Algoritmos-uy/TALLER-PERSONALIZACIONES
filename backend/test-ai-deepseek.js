@@ -1,4 +1,6 @@
-require('dotenv').config();
+// Cargar variables de entorno desde .env cuando se ejecuta localmente.
+// En producción preferimos configurar variables en cPanel.
+try { require('dotenv').config(); } catch (e) { /* dotenv no instalado en producción */ }
 const ai = require('./services/ai.service');
 
 async function run() {
