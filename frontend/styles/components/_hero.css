@@ -87,6 +87,18 @@
   margin-bottom: var(--space-10);
 }
 
+/* Center action buttons in the hero on mobile for better visual balance */
+.c-hero .o-flex.o-flex--gap-4.o-flex--wrap {
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .c-hero .o-flex.o-flex--gap-4.o-flex--wrap {
+    justify-content: flex-start;
+  }
+}
+
 .c-hero__media {
   position: relative;
 }
@@ -157,7 +169,8 @@
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
-  color: var(--color-primary);
+  /* Use a theme-aware text color for better contrast in light/dark modes */
+  color: var(--color-text-muted);
   display: flex;
   align-items: center;
   gap: var(--space-3);

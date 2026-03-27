@@ -11,6 +11,11 @@
 const path = require('path');
 const fs   = require('fs');
 
+// ---------------------------------------------------------------------------
+// NOTE: API keys must come from environment variables (DEEPSEEK_API_KEY) or a
+// secure secrets store. Do NOT hard-code keys in source control.
+// ---------------------------------------------------------------------------
+
 // Compatibilidad con entornos de Node donde `fetch` no está disponible globalmente.
 // Intentamos usar global.fetch, luego una implementación instalada (`node-fetch`),
 // y por último `undici` si está disponible. Si no hay ninguno, lanzamos error
@@ -214,8 +219,9 @@ exports.chat = async (message) => {
 // - Llamada genérica POST a la API (ajusta URL/shape según la especificación real)
 // ---------------------------------------------------------------------------
 async function chatDeepSeek(message) {
+  // Use the API key provided through environment variables only.
   const apiKey = process.env.DEEPSEEK_API_KEY;
-  if (!apiKey) throw new Error('DEEPSEEK_API_KEY no está configurada');
+  if (!apiKey) throw new Error('DEEPSEEK_API_KEY no está configurada. Configurala en las variables de entorno.');
 
   const url = 'https://api.deepseek.com/chat/completions'; // Endpoint según especificación de DeepSeek
 

@@ -10,7 +10,7 @@
 }
 
 .c-contact::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -23,6 +23,13 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-12);
+}
+
+/* Mobile: centrar contenido vertical y horizontalmente para mejor presencia
+   en el viewport (VP). En pantallas grandes se restaura el layout en dos columnas. */
+.c-contact__grid {
+  align-items: center;
+  justify-items: center;
 }
 
 @media (min-width: 768px) {
@@ -38,12 +45,24 @@
   gap: var(--space-3);
 }
 
+/* Centrar textos e iconos en mobile */
+.c-contact__info {
+  align-items: flex-start;
+  text-align: center;
+}
+
 .c-contact__detail {
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);
   font-size: var(--text-sm);
   color: var(--color-text-muted);
+}
+
+/* Alineado centrado para cada fila de detalle en mobile */
+.c-contact__detail {
+  align-items: start;
+  justify-content: start;
 }
 
 .c-contact__detail-icon {
@@ -59,11 +78,69 @@
   font-size: 0.9rem;
 }
 
+/* Asegurar que el icono no se separe visualmente en mobile */
+.c-contact__detail-icon {
+  margin: 0;
+}
+
 .c-contact__detail-text strong {
   display: block;
-  color: var(--color-white);
+  /* Use heading/text variable so it adapts to light/dark themes */
+  color: var(--color-heading);
   font-size: var(--text-base);
   margin-bottom: var(--space-1);
+}
+
+/* Botones de acción: centro en mobile, fila a la derecha en desktop */
+.c-contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Make action buttons full-width on mobile for better tap targets */
+.c-contact-buttons > a,
+.c-contact-buttons > button {
+  width: 100%;
+  max-width: 480px; /* avoid extremely wide buttons on very large small screens */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Restore layout for larger screens */
+@media (min-width: 768px) {
+  .c-contact__grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: start;
+  }
+
+  .c-contact__info {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .c-contact__detail {
+    align-items: left;
+    justify-content: flex-start;
+  }
+
+  .c-contact-buttons {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-3);
+  }
+
+  /* Desktop: buttons return to natural width and no max-width cap from mobile */
+  .c-contact-buttons > a,
+  .c-contact-buttons > button {
+    width: auto;
+    max-width: 90%; /* optional: prevent excessively wide buttons on very large screens */
+  }
 }
 
 /* --- Footer --- */
@@ -124,7 +201,7 @@
 }
 
 .c-courses::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -145,7 +222,9 @@
 .js-reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .js-reveal.is-visible {
@@ -153,8 +232,18 @@
   transform: translateY(0);
 }
 
-.js-reveal[data-delay="1"] { transition-delay: 0.1s; }
-.js-reveal[data-delay="2"] { transition-delay: 0.2s; }
-.js-reveal[data-delay="3"] { transition-delay: 0.3s; }
-.js-reveal[data-delay="4"] { transition-delay: 0.4s; }
-.js-reveal[data-delay="5"] { transition-delay: 0.5s; }
+.js-reveal[data-delay="1"] {
+  transition-delay: 0.1s;
+}
+.js-reveal[data-delay="2"] {
+  transition-delay: 0.2s;
+}
+.js-reveal[data-delay="3"] {
+  transition-delay: 0.3s;
+}
+.js-reveal[data-delay="4"] {
+  transition-delay: 0.4s;
+}
+.js-reveal[data-delay="5"] {
+  transition-delay: 0.5s;
+}
